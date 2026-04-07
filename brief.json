@@ -1,0 +1,269 @@
+{
+  "run_id": "run-1775521171342",
+  "job_index": 1,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 1,
+    "archetype": "generator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Un outil ludique et intuitif pour construire des arbres généalogiques esthétiques. Interface de type glisser-…",
+    "notes": "Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale…\nMarché adjacent : histoire, généalogie, cadeaux personnalisés. Le thème 'Paper Vintage' renforce l'aspect personnel et hérité. Structure 'Stacked Spotlight' pour une présentation claire des étapes.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "railway",
+    "requested_publish_target": "railway",
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "generator",
+    "archetype_mix": [
+      "generator"
+    ],
+    "forced_design_theme": "paper-vintage",
+    "forced_structure_preset": "stacked-spotlight",
+    "site_idea_title": "Générateur d'Arbres Généalogiques Visuels",
+    "site_idea_summary": "Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale…"
+  },
+  "site_spec": {
+    "slug": "generateur-d-arbres-genealogiques-visuels-1",
+    "theme": {
+      "name": "Paper Vintage",
+      "slug": "paper-vintage",
+      "eyebrow": "Archive Utility",
+      "family": "paper-vintage",
+      "moods": [
+        "calm",
+        "classic",
+        "heritage",
+        "editorial"
+      ],
+      "archetypes": [
+        "generator",
+        "calculator"
+      ],
+      "niches": [
+        "documents",
+        "legal",
+        "leases",
+        "receipts",
+        "contracts"
+      ],
+      "keywords": [
+        "pdf",
+        "document",
+        "template",
+        "receipt",
+        "contract"
+      ],
+      "token_index": [
+        "archive",
+        "calculator",
+        "calm",
+        "classic",
+        "contract",
+        "contracts",
+        "document",
+        "documents",
+        "editorial",
+        "generator",
+        "heritage",
+        "leases",
+        "legal",
+        "paper",
+        "pdf",
+        "receipt",
+        "receipts",
+        "template",
+        "utility",
+        "vintage"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
+      "display_font": "\"Cormorant Garamond\", serif",
+      "body_font": "\"Inter\", sans-serif",
+      "layout": "showcase",
+      "card_style": "paper",
+      "button_style": "gradient",
+      "decor_style": "paper",
+      "hero_template": "0.94fr 1.06fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 2,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "34px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "16px",
+      "palette": {
+        "bg": "#f7ecd6",
+        "surface": "rgba(255,248,235,0.92)",
+        "surface_border": "rgba(122, 74, 34, 0.22)",
+        "text": "#4a2c16",
+        "muted": "#7c5a40",
+        "accent": "#92400e",
+        "accent_alt": "#b45309",
+        "hero_glow": "rgba(146, 64, 14, 0.1)",
+        "button_text": "#fff9f0",
+        "panel_alt": "rgba(255,255,255,0.6)",
+        "shadow": "0 22px 56px rgba(90, 52, 28, 0.12)",
+        "input_fill": "rgba(122,74,34,0.04)"
+      }
+    },
+    "structure": {
+      "name": "Stacked Spotlight",
+      "slug": "stacked-spotlight",
+      "hero_variant": "stacked",
+      "proof_variant": "steps",
+      "section_order": [
+        "proof",
+        "seo",
+        "features",
+        "faq"
+      ],
+      "feature_columns": 2,
+      "faq_columns": 2,
+      "family": "spotlight",
+      "moods": [
+        "editorial",
+        "focused",
+        "premium"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator",
+        "generator"
+      ],
+      "niches": [
+        "premium services",
+        "planning",
+        "renovation",
+        "advice"
+      ],
+      "keywords": [
+        "spotlight",
+        "stacked",
+        "story",
+        "premium"
+      ],
+      "token_index": [
+        "advice",
+        "calculator",
+        "editorial",
+        "faq",
+        "features",
+        "focused",
+        "generator",
+        "planning",
+        "premium",
+        "proof",
+        "renovation",
+        "seo",
+        "services",
+        "spotlight",
+        "stacked",
+        "steps",
+        "story",
+        "tool"
+      ]
+    },
+    "render_direction": "editorial-ledger",
+    "render_direction_name": "Editorial Ledger",
+    "page_blueprint": "magazine-fold",
+    "page_blueprint_name": "Magazine Fold",
+    "title": "Générateur d'Arbres Généalogiques Visuels",
+    "tagline": "Créez Votre Récit Familial Unique",
+    "description": "Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...",
+    "feature_prefix": "Bloc",
+    "action": "Générer le document",
+    "cta_primary": "Générer les Idées",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "name",
+        "label": "Nom ou entreprise",
+        "type": "text",
+        "placeholder": "Studio Horizon",
+        "weight": 1.0
+      },
+      {
+        "id": "goal",
+        "label": "Objectif du document",
+        "type": "text",
+        "placeholder": "confirmation de demande",
+        "weight": 1.0
+      },
+      {
+        "id": "details",
+        "label": "Détails utiles",
+        "type": "text",
+        "placeholder": "date, montant, référence",
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Editorial Ledger",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Brouillon généré",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Editorial Ledger",
+      "Générer les Idées",
+      "Brouillon généré",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Brouillon généré",
+    "result_unit": "",
+    "runtime_mode": "document_generator",
+    "page_variant": "editorial",
+    "faq_topic": "Générateur d'Arbres Généalogiques Visuels",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Générateur d'Arbres Généalogiques Visuels ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Générateur d'Arbres Généalogiques Visuels et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Générateur d&#x27;Arbres Généalogiques Visuels | Créez Votre Récit Familial Unique</title>\n    <meta name=\"description\" content=\"Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...\">\n    <style>\n        :root {\n            --color-primary: #5a4b41;\n            --color-secondary: #a69a8b;\n            --color-background: #f7f3ed;\n            --color-text: #333;\n            --color-border: #d0c8bd;\n            --font-family-body: 'Georgia', serif;\n            --font-family-heading: 'Helvetica Neue', Arial, sans-serif;\n            --spacing-unit: 1.5rem;\n        }\n\n        body {\n            font-family: var(--font-family-body);\n            color: var(--color-text);\n            background-color: var(--color-background);\n            margin: 0;\n            padding: 0;\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n\n        header {\n            background-color: var(--color-primary);\n            color: #fff;\n            width: 100%;\n            padding: var(--spacing-unit) 0;\n            text-align: center;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n        }\n\n        header h1 {\n            margin: 0;\n            font-family: var(--font-family-heading);\n            font-size: 2.5rem;\n            letter-spacing: 1px;\n        }\n\n        main {\n            width: 100%;\n            max-width: 1000px;\n            padding: var(--spacing-unit);\n            box-sizing: border-box;\n            display: grid;\n            gap: var(--spacing-unit);\n            grid-template-columns: 1fr;\n        }\n\n        section {\n            background-color: #fff;\n            border: 1px solid var(--color-border);\n            padding: var(--spacing-unit);\n            box-shadow: 0 1px 3px rgba(0,0,0,0.08);\n        }\n\n        h2 {\n            font-family: var(--font-family-heading);\n            color: var(--color-primary);\n            font-size: 1.8rem;\n            margin-top: 0;\n            border-bottom: 1px solid var(--color-border);\n            padding-bottom: 0.5rem;\n            margin-bottom: var(--spacing-unit);\n        }\n\n        .cta-button {\n            display: inline-block;\n            background-color: var(--color-primary);\n            color: #fff;\n            padding: 0.8rem 1.5rem;\n            border: none;\n            cursor: pointer;\n            font-size: 1rem;\n            font-family: var(--font-family-heading);\n            text-decoration: none;\n            transition: background-color 0.3s ease;\n            text-align: center;\n        }\n\n        .cta-button:hover {\n            background-color: #7d6b5e;\n        }\n\n        #presentation, #how-it-works, #tool-section {\n            grid-column: 1 / -1;\n        }\n\n        #tool-form {\n            display: grid;\n            gap: 1rem;\n            margin-top: var(--spacing-unit);\n        }\n\n        #tool-form label {\n            font-weight: bold;\n            display: block;\n            margin-bottom: 0.5rem;\n        }\n\n        #tool-form input[type=\"text\"],\n        #tool-form textarea,\n        #tool-form select {\n            width: calc(100% - 20px);\n            padding: 10px;\n            border: 1px solid var(--color-border);\n            background-color: #fcfafa;\n            font-family: var(--font-family-body);\n            font-size: 1rem;\n        }\n\n        #tool-form textarea {\n            min-height: 80px;\n            resize: vertical;\n        }\n\n        #tool-submit {\n            width: auto;\n            padding: 1rem 2rem;\n            font-size: 1.1rem;\n            margin-top: 1rem;\n        }\n\n        #tool-result {\n            margin-top: var(--spacing-unit);\n            border-top: 1px dashed var(--color-border);\n            padding-top: var(--spacing-unit);\n        }\n\n        #tool-result h3 {\n            font-family: var(--font-family-heading);\n            color: var(--color-primary);\n            font-size: 1.5rem;\n            margin-bottom: 1rem;\n        }\n\n        #tool-result ul {\n            list-style: none;\n            padding: 0;\n        }\n\n        #tool-result li {\n            background-color: #f0ede9;\n            border: 1px solid var(--color-secondary);\n            padding: 0.8rem;\n            margin-bottom: 0.5rem;\n            font-family: var(--font-family-body);\n            position: relative;\n            padding-left: 1.5rem;\n        }\n\n        #tool-result li::before {\n            content: '📜';\n            position: absolute;\n            left: 0.5rem;\n            color: var(--color-primary);\n        }\n\n        .spotlight-card {\n            display: flex;\n            flex-direction: column;\n            background-color: #fefefe;\n            border: 1px solid var(--color-border);\n            padding: var(--spacing-unit);\n            box-shadow: 0 2px 5px rgba(0,0,0,0.1);\n            margin-bottom: var(--spacing-unit);\n        }\n\n        .spotlight-card h3 {\n            font-family: var(--font-family-heading);\n            color: var(--color-primary);\n            margin-top: 0;\n            font-size: 1.4rem;\n        }\n\n        .spotlight-card img {\n            max-width: 100%;\n            height: auto;\n            margin-bottom: var(--spacing-unit);\n            border: 1px solid var(--color-border);\n        }\n\n        .additional-info {\n            background-color: #f0ede9;\n            padding: var(--spacing-unit);\n            border: 1px solid var(--color-secondary);\n            margin-top: var(--spacing-unit);\n        }\n\n        .additional-info h3 {\n            color: var(--color-primary);\n            font-family: var(--font-family-heading);\n            margin-top: 0;\n            font-size: 1.3rem;\n        }\n\n        footer {\n            background-color: var(--color-primary);\n            color: #fff;\n            width: 100%;\n            padding: var(--spacing-unit) 0;\n            text-align: center;\n            margin-top: var(--spacing-unit);\n        }\n\n        footer p {\n            margin: 0;\n            font-size: 0.9rem;\n        }\n\n        .seo-section {\n            background-color: var(--color-secondary);\n            color: #fff;\n            padding: var(--spacing-unit);\n            margin-top: var(--spacing-unit);\n            text-align: left;\n            font-size: 0.9rem;\n            line-height: 1.8;\n            max-width: 1000px;\n            box-sizing: border-box;\n            width: 100%;\n        }\n\n        .seo-section h2 {\n            color: #fff;\n            border-bottom-color: rgba(255,255,255,0.3);\n        }\n\n        .seo-section a {\n            color: #fff;\n            text-decoration: underline;\n        }\n\n        @media (min-width: 768px) {\n            main {\n                grid-template-columns: 1fr 1fr;\n            }\n            #presentation {\n                grid-column: 1 / 2;\n            }\n            #how-it-works {\n                grid-column: 2 / 3;\n            }\n            #tool-section {\n                grid-column: 1 / -1;\n            }\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app\">\n    <meta property=\"og:title\" content=\"Générateur d&#x27;Arbres Généalogiques Visuels\">\n    <meta property=\"og:description\" content=\"Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...\">\n    <meta property=\"og:url\" content=\"https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Générateur d'Arbres Généalogiques Visuels\", \"description\": \"Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...\", \"url\": \"https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"generateur-d-arbres-genealogiques-visuels-1\" data-runtime-mode=\"document_generator\">\n    <header>\n        <h1>Générateur d'Arbres Généalogiques Visuels</h1>\n        <p>Donnez vie à votre héritage familial avec élégance.</p>\n    </header>\n\n    <main>\n        <section id=\"presentation\" class=\"spotlight-card\">\n            <h2>Créez Votre Récit Familial Unique</h2>\n            <img src=\"https://via.placeholder.com/400x250?text=Arbre+Généalogique+Personnalisé\" alt=\"Exemple d'arbre généalogique personnalisé\">\n            <p>Notre outil intuitif vous permet de transformer des données brutes en magnifiques arbres généalogiques visuels. Oubliez les logiciels complexes et les designs génériques. Ici, chaque arbre est une œuvre d'art, reflétant le caractère unique de votre lignée.</p>\n            <p>Idéal pour un cadeau inoubliable, une exposition familiale ou simplement pour documenter votre histoire personnelle avec une touche d'élégance \"Paper Vintage\".</p>\n        </section>\n\n        <section id=\"how-it-works\" class=\"spotlight-card\">\n            <h2>Comment Ça Marche ?</h2>\n            <h3>1. Saisie Simplifiée</h3>\n            <p>Entrez les noms, dates et liens de parenté de votre famille. Pas besoin d'être un expert en généalogie, notre interface guide vos pas.</p>\n            <h3>2. Personnalisation Avancée</h3>\n            <p>Choisissez parmi une galerie de styles graphiques inspirés du thème \"Paper Vintage\". Ajoutez des photos de famille, des anecdotes personnelles et même des couleurs pour chaque branche.</p>\n            <h3>3. Visualisation Instantanée</h3>\n            <p>Obtenez un aperçu direct de votre arbre. Ajustez et peaufinez jusqu'à ce que le résultat soit parfait, prêt à être sauvegardé ou imprimé.</p>\n            <a href=\"#tool-section\" class=\"cta-button\">Commencer mon Arbre</a>\n        </section>\n\n        <section id=\"tool-section\">\n            <h2>Votre Atelier Généalogique</h2>\n            <p>Remplissez les informations ci-dessous pour générer des idées de titres et de descriptions pour votre arbre généalogique. Ces suggestions vous aideront à mieux présenter votre création.</p>\n            <form id=\"tool-form\">\n                <label for=\"family-name\">Nom de Famille Principal (ex: Dupont) :</label>\n                <input type=\"text\" id=\"family-name\" name=\"family-name\" placeholder=\"Ex: Les Durant\" required>\n\n                <label for=\"generations\">Nombre de Générations (ex: 3, 4, 5) :</label>\n                <input type=\"text\" id=\"generations\" name=\"generations\" placeholder=\"Ex: 4\" required>\n\n                <label for=\"theme-preference\">Préférence de Thème Visuel :</label>\n                <select id=\"theme-preference\" name=\"theme-preference\">\n                    <option value=\"vintage\">Paper Vintage Classique</option>\n                    <option value=\"minimalist\">Minimaliste Moderne</option>\n                    <option value=\"floral\">Éclat Floral</option>\n                    <option value=\"artdeco\">Art Déco Élégant</option>\n                </select>\n\n                <label for=\"key-event\">Un Événement Clé ou une Particularité (Optionnel) :</label>\n                <textarea id=\"key-event\" name=\"key-event\" placeholder=\"Ex: Origines en Bretagne, Histoire de Résistance, etc.\"></textarea>\n\n                <button type=\"submit\" id=\"tool-submit\" class=\"cta-button\">Générer les Idées</button>\n            </form>\n\n            <div id=\"tool-result\">\n                <h3 id=\"result-headline\">Vos Suggestions Personnalisées :</h3>\n                <ul id=\"headline-list\">\n                    <li>Remplissez le formulaire ci-dessus pour obtenir des idées de titres et descriptions uniques pour votre arbre généalogique.</li>\n                </ul>\n            </div>\n        </section>\n\n        <section class=\"additional-info\">\n            <h3>Pourquoi choisir notre générateur ?</h3>\n            <p>Notre approche \"Editorial Ledger\" transforme chaque arbre en une page d'histoire, avec une composition soignée et des finitions précises. Le design \"Paper Vintage\" n'est pas qu'un style, c'est une invitation à se connecter avec le passé.</p>\n            <ul>\n                <li>Interface glisser-déposer (conceptuel pour cette étape)</li>\n                <li>Choix de polices et de motifs \"héritage\"</li>\n                <li>Intégration facile de photos et de notes manuscrites</li>\n                <li>Option d'exportation en haute résolution pour impression</li>\n            </ul>\n            <a href=\"#\" class=\"cta-button\" data-affiliate-slot=\"premium-upgrade\">Voir les Fonctionnalités Premium</a>\n        </section>\n    </main>\n\n    <div class=\"seo-section\">\n        <h2>Découvrez l'Histoire de Votre Famille avec Élégance</h2>\n        <p>Vous cherchez un moyen unique de <a href=\"#\">créer votre arbre généalogique</a> ? Notre outil en ligne vous offre une expérience immersive pour retracer et visualiser votre lignée familiale. Que vous soyez un passionné de <a href=\"#\">généalogie</a>, un <a href=\"#\">historiens amateur</a>, ou que vous souhaitiez offrir un <a href=\"#\">cadeau personnalisé</a>, notre générateur est la solution idéale.</p>\n        <p>Explorez différents <a href=\"#\">styles d'arbres généalogiques</a>, du classique \"Paper Vintage\" au design moderne, et ajoutez des <a href=\"#\">photos de famille</a>, des <a href=\"#\">dates clés</a> et des <a href=\"#\">anecdotes</a> pour enrichir chaque branche. Notre interface intuitive vous permet de concevoir facilement un <a href=\"#\">arbre généalogique imprimable</a>, un <a href=\"#\">tableau généalogique décoratif</a> ou même un <a href=\"#\">poster d'histoire familiale</a>.</p>\n        <p>Ne laissez pas vos racines tomber dans l'oubli. Utilisez notre <a href=\"#\">logiciel d'arbre généalogique gratuit en ligne</a> pour commencer votre projet dès aujourd'hui et conserver précieusement le <a href=\"#\">patrimoine familial</a>. Idéal pour la <a href=\"#\">documentation familiale</a>, les <a href=\"#\">recherches généalogiques</a> ou simplement pour le plaisir de partager votre histoire.</p>\n        <p>Mots-clés : arbre généalogique en ligne, créer un arbre familial, généalogie gratuite, logiciel généalogie, modèle arbre généalogique, idée cadeau généalogique, histoire de famille, lignée familiale, recherche d'ancêtres, ascendance, arbre de vie.</p>\n    </div>\n\n    <footer>\n        <p>&copy; 2023 Générateur d'Arbres Généalogiques Visuels. Tous droits réservés.</p>\n    </footer>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n\n            const familyName = document.getElementById('family-name').value;\n            const generations = parseInt(document.getElementById('generations').value);\n            const themePreference = document.getElementById('theme-preference').value;\n            const keyEvent = document.getElementById('key-event').value;\n\n            const headlineList = document.getElementById('headline-list');\n            headlineList.innerHTML = ''; // Clear previous results\n\n            const themes = {\n                vintage: \"Paper Vintage\",\n                minimalist: \"Minimaliste\",\n                floral: \"Floral\",\n                artdeco: \"Art Déco\"\n            };\n\n            const selectedTheme = themes[themePreference] || \"Élégant\";\n\n            const generationText = generations > 1 ? `sur ${generations} générations` : `sur 1 génération`;\n            const eventText = keyEvent ? ` avec une touche spéciale : \"${keyEvent}\".` : '.';\n\n            const suggestions = [\n                // SEO-friendly\n                `Découvrez l'histoire de la famille ${familyName} : un arbre généalogique ${generationText}.`,\n                `Générez votre arbre ${selectedTheme} pour la lignée ${familyName} ${generationText}${eventText}`,\n                `Documentation Familiale : Arbre Généalogique ${familyName} ${generationText}, style ${selectedTheme}.`,\n                // Clickbait\n                `L'incroyable histoire de la famille ${familyName} révélée ! Votre arbre ${generationText} à portée de clic.`,\n                `Ne devinez plus ! Créez votre arbre ${familyName} ${generationText} avec ce style unique ${selectedTheme}.`,\n                `Choquant ! Ce que vous ne saviez pas sur vos ancêtres ${familyName} ${generationText}.`,\n                // Expert/Detailed\n                `Analyse généalogique visuelle : l'ascendance des ${familyName} illustrée ${generationText} en ${selectedTheme}.`,\n                `Cartographie généalogique interactive des ${familyName} : ${generationText} et au-delà.`,\n                `Représentation graphique personnalisée du lignage ${familyName}, édition ${selectedTheme}, ${generationText}${eventText}`,\n                // Soft/Emotional\n                `Célébrez vos racines : l'arbre de la famille ${familyName} ${generationText}, un héritage visuel.`,\n                `Connectez-vous à votre passé : l'arbre généalogique des ${familyName} en style ${selectedTheme}.`,\n                `Un héritage précieux : revivez l'histoire des ${familyName} ${generationText} à travers cet arbre unique.`,\n                // Commercial/Call to Action\n                `Créez l'arbre généalogique ${familyName} ${generationText} maintenant ! Style ${selectedTheme} inclus.`,\n                `Obtenez votre arbre familial ${familyName} ${generationText} personnalisé : un design ${selectedTheme} vous attend.`,\n                `Transformez l'histoire des ${familyName} ${generationText} en œuvre d'art avec notre générateur ${selectedTheme}.`\n            ];\n\n            suggestions.forEach(suggestion => {\n                const li = document.createElement('li');\n                li.textContent = suggestion;\n                headlineList.appendChild(li);\n            });\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.setAttribute(\"rel\", \"nofollow sponsored noopener noreferrer\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\", \"noopener\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (tag === \"select\") {\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      field.value = sampleNumber(field);\n      return;\n    }\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    const blocker = function (event) {\n      event.preventDefault();\n    };\n    form.addEventListener(\"submit\", blocker, { capture: true, once: true });\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n    inspectResult(before, 6);\n  }\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
