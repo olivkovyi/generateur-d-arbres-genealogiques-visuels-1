@@ -3,400 +3,477 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Générateur d&#x27;Arbres Généalogiques Visuels | Créez Votre Récit Familial Unique</title>
-    <meta name="description" content="Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...">
+    <title>Générateur d&#x27;Arbres Généalogiques Visuels | Votre Histoire en Couleurs et en Liens</title>
+    <meta name="description" content="Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale et les cadeaux personnalisés.">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
         :root {
-            --color-primary: #5a4b41;
-            --color-secondary: #a69a8b;
-            --color-background: #f7f3ed;
-            --color-text: #333;
-            --color-border: #d0c8bd;
-            --font-family-body: 'Georgia', serif;
-            --font-family-heading: 'Helvetica Neue', Arial, sans-serif;
-            --spacing-unit: 1.5rem;
+            --primary-bg: #fdfaf6;
+            --secondary-bg: #ede6dd;
+            --accent-color: #8c5b3c;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #d4c8b7;
+            --shadow-color: rgba(0, 0, 0, 0.05);
         }
-
         body {
-            font-family: var(--font-family-body);
-            color: var(--color-text);
-            background-color: var(--color-background);
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: var(--primary-bg);
+            color: var(--text-color);
             line-height: 1.6;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            min-height: 100vh;
         }
-
-        header {
-            background-color: var(--color-primary);
-            color: #fff;
-            width: 100%;
-            padding: var(--spacing-unit) 0;
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 2.8em;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 0.8em;
         }
-
-        header h1 {
-            margin: 0;
-            font-family: var(--font-family-heading);
-            font-size: 2.5rem;
-            letter-spacing: 1px;
-        }
-
-        main {
-            width: 100%;
-            max-width: 1000px;
-            padding: var(--spacing-unit);
-            box-sizing: border-box;
-            display: grid;
-            gap: var(--spacing-unit);
-            grid-template-columns: 1fr;
-        }
-
-        section {
-            background-color: #fff;
-            border: 1px solid var(--color-border);
-            padding: var(--spacing-unit);
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-        }
-
         h2 {
-            font-family: var(--font-family-heading);
-            color: var(--color-primary);
-            font-size: 1.8rem;
-            margin-top: 0;
-            border-bottom: 1px solid var(--color-border);
-            padding-bottom: 0.5rem;
-            margin-bottom: var(--spacing-unit);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--color-primary);
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-family: var(--font-family-heading);
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+            font-size: 2em;
             text-align: center;
+            margin-bottom: 1.5em;
+            color: var(--text-color);
         }
-
-        .cta-button:hover {
-            background-color: #7d6b5e;
+        h3 {
+            font-size: 1.6em;
+            color: var(--accent-color);
         }
-
-        #presentation, #how-it-works, #tool-section {
-            grid-column: 1 / -1;
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
         }
-
-        #tool-form {
-            display: grid;
-            gap: 1rem;
-            margin-top: var(--spacing-unit);
+        header {
+            background-color: var(--secondary-bg);
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px var(--shadow-color);
         }
-
-        #tool-form label {
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            color: var(--light-text);
+        }
+        .section {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            position: relative;
+            overflow: hidden;
+        }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(to right, var(--accent-color), transparent);
+            opacity: 0.1;
+        }
+        .tool-box {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        label {
             font-weight: bold;
-            display: block;
-            margin-bottom: 0.5rem;
+            color: var(--accent-color);
         }
-
-        #tool-form input[type="text"],
-        #tool-form textarea,
-        #tool-form select {
-            width: calc(100% - 20px);
-            padding: 10px;
-            border: 1px solid var(--color-border);
-            background-color: #fcfafa;
-            font-family: var(--font-family-body);
-            font-size: 1rem;
+        input[type="text"], textarea, select {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: 'Roboto', sans-serif;
+            transition: border-color 0.3s ease;
         }
-
-        #tool-form textarea {
+        input[type="text"]:focus, textarea:focus, select:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(140, 91, 60, 0.2);
+        }
+        textarea {
             min-height: 80px;
             resize: vertical;
         }
-
-        #tool-submit {
-            width: auto;
-            padding: 1rem 2rem;
-            font-size: 1.1rem;
-            margin-top: 1rem;
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            align-self: flex-start;
         }
-
+        button:hover {
+            background-color: #a36d4a;
+            transform: translateY(-2px);
+        }
         #tool-result {
-            margin-top: var(--spacing-unit);
-            border-top: 1px dashed var(--color-border);
-            padding-top: var(--spacing-unit);
+            margin-top: 30px;
+            padding: 25px;
+            background-color: var(--secondary-bg);
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            min-height: 150px;
+            color: var(--text-color);
+            font-size: 1.1em;
+            white-space: pre-wrap;
+            word-break: break-word;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
-
-        #tool-result h3 {
-            font-family: var(--font-family-heading);
-            color: var(--color-primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .result-group {
+            margin-bottom: 15px;
         }
-
-        #tool-result ul {
-            list-style: none;
-            padding: 0;
+        .result-group h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
         }
-
-        #tool-result li {
-            background-color: #f0ede9;
-            border: 1px solid var(--color-secondary);
-            padding: 0.8rem;
-            margin-bottom: 0.5rem;
-            font-family: var(--font-family-body);
-            position: relative;
-            padding-left: 1.5rem;
+        .result-item {
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-color);
         }
-
-        #tool-result li::before {
-            content: '📜';
-            position: absolute;
-            left: 0.5rem;
-            color: var(--color-primary);
+        .result-item:last-child {
+            border-bottom: none;
         }
-
-        .spotlight-card {
-            display: flex;
-            flex-direction: column;
-            background-color: #fefefe;
-            border: 1px solid var(--color-border);
-            padding: var(--spacing-unit);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            margin-bottom: var(--spacing-unit);
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
-
-        .spotlight-card h3 {
-            font-family: var(--font-family-heading);
-            color: var(--color-primary);
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        .spotlight-card img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: var(--spacing-unit);
-            border: 1px solid var(--color-border);
-        }
-
-        .additional-info {
-            background-color: #f0ede9;
-            padding: var(--spacing-unit);
-            border: 1px solid var(--color-secondary);
-            margin-top: var(--spacing-unit);
-        }
-
-        .additional-info h3 {
-            color: var(--color-primary);
-            font-family: var(--font-family-heading);
-            margin-top: 0;
-            font-size: 1.3rem;
-        }
-
-        footer {
-            background-color: var(--color-primary);
-            color: #fff;
-            width: 100%;
-            padding: var(--spacing-unit) 0;
+        .feature-card {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 8px var(--shadow-color);
             text-align: center;
-            margin-top: var(--spacing-unit);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
         }
-
+        .feature-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+        .feature-card p {
+            color: var(--light-text);
+            font-size: 0.95em;
+        }
+        .testimonials {
+            background-color: var(--secondary-bg);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+        .testimonial-card {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 700px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        .testimonial-card cite {
+            display: block;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
         .seo-section {
-            background-color: var(--color-secondary);
-            color: #fff;
-            padding: var(--spacing-unit);
-            margin-top: var(--spacing-unit);
-            text-align: left;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            max-width: 1000px;
-            box-sizing: border-box;
-            width: 100%;
+            background-color: var(--primary-bg);
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--light-text);
+            font-size: 0.9em;
         }
-
-        .seo-section h2 {
-            color: #fff;
-            border-bottom-color: rgba(255,255,255,0.3);
+        .seo-section p {
+            max-width: 800px;
+            margin: 0 auto 15px auto;
+            line-height: 1.7;
         }
-
-        .seo-section a {
-            color: #fff;
-            text-decoration: underline;
+        .seo-section h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--text-color);
         }
-
-        @media (min-width: 768px) {
-            main {
-                grid-template-columns: 1fr 1fr;
-            }
-            #presentation {
-                grid-column: 1 / 2;
-            }
-            #how-it-works {
-                grid-column: 2 / 3;
-            }
-            #tool-section {
-                grid-column: 1 / -1;
-            }
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #a36d4a;
+        }
+        footer {
+            background-color: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            margin-top: auto;
         }
     </style>
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app">
     <meta property="og:title" content="Générateur d&#x27;Arbres Généalogiques Visuels">
-    <meta property="og:description" content="Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...">
+    <meta property="og:description" content="Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale et les cadeaux personnalisés.">
     <meta property="og:url" content="https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app">
     <meta property="og:type" content="website">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Générateur d'Arbres Généalogiques Visuels", "description": "Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...", "url": "https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Générateur d'Arbres Généalogiques Visuels", "description": "Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale et les cadeaux personnalisés.", "url": "https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
 </head>
 <body data-site-slug="generateur-d-arbres-genealogiques-visuels-1" data-runtime-mode="document_generator">
     <header>
-        <h1>Générateur d'Arbres Généalogiques Visuels</h1>
-        <p>Donnez vie à votre héritage familial avec élégance.</p>
+        <div class="container">
+            <h1>Générateur d'Arbres Généalogiques Visuels</h1>
+            <p class="intro">Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale et les cadeaux personnalisés.</p>
+        </div>
     </header>
 
-    <main>
-        <section id="presentation" class="spotlight-card">
-            <h2>Créez Votre Récit Familial Unique</h2>
-            <img src="https://via.placeholder.com/400x250?text=Arbre+Généalogique+Personnalisé" alt="Exemple d'arbre généalogique personnalisé">
-            <p>Notre outil intuitif vous permet de transformer des données brutes en magnifiques arbres généalogiques visuels. Oubliez les logiciels complexes et les designs génériques. Ici, chaque arbre est une œuvre d'art, reflétant le caractère unique de votre lignée.</p>
-            <p>Idéal pour un cadeau inoubliable, une exposition familiale ou simplement pour documenter votre histoire personnelle avec une touche d'élégance "Paper Vintage".</p>
-        </section>
+    <main class="container">
+        <section class="section">
+            <h2>Votre Histoire en Couleurs et en Liens</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: var(--light-text);">Laissez libre cours à votre créativité pour visualiser l'héritage de votre famille. Saisissez quelques informations clés et nous générerons des bases pour votre arbre.</p>
 
-        <section id="how-it-works" class="spotlight-card">
-            <h2>Comment Ça Marche ?</h2>
-            <h3>1. Saisie Simplifiée</h3>
-            <p>Entrez les noms, dates et liens de parenté de votre famille. Pas besoin d'être un expert en généalogie, notre interface guide vos pas.</p>
-            <h3>2. Personnalisation Avancée</h3>
-            <p>Choisissez parmi une galerie de styles graphiques inspirés du thème "Paper Vintage". Ajoutez des photos de famille, des anecdotes personnelles et même des couleurs pour chaque branche.</p>
-            <h3>3. Visualisation Instantanée</h3>
-            <p>Obtenez un aperçu direct de votre arbre. Ajustez et peaufinez jusqu'à ce que le résultat soit parfait, prêt à être sauvegardé ou imprimé.</p>
-            <a href="#tool-section" class="cta-button">Commencer mon Arbre</a>
-        </section>
-
-        <section id="tool-section">
-            <h2>Votre Atelier Généalogique</h2>
-            <p>Remplissez les informations ci-dessous pour générer des idées de titres et de descriptions pour votre arbre généalogique. Ces suggestions vous aideront à mieux présenter votre création.</p>
-            <form id="tool-form">
-                <label for="family-name">Nom de Famille Principal (ex: Dupont) :</label>
-                <input type="text" id="family-name" name="family-name" placeholder="Ex: Les Durant" required>
-
-                <label for="generations">Nombre de Générations (ex: 3, 4, 5) :</label>
-                <input type="text" id="generations" name="generations" placeholder="Ex: 4" required>
-
-                <label for="theme-preference">Préférence de Thème Visuel :</label>
-                <select id="theme-preference" name="theme-preference">
-                    <option value="vintage">Paper Vintage Classique</option>
-                    <option value="minimalist">Minimaliste Moderne</option>
-                    <option value="floral">Éclat Floral</option>
-                    <option value="artdeco">Art Déco Élégant</option>
-                </select>
-
-                <label for="key-event">Un Événement Clé ou une Particularité (Optionnel) :</label>
-                <textarea id="key-event" name="key-event" placeholder="Ex: Origines en Bretagne, Histoire de Résistance, etc."></textarea>
-
-                <button type="submit" id="tool-submit" class="cta-button">Générer les Idées</button>
+            <form id="tool-form" class="tool-box">
+                <div class="input-group">
+                    <label for="familyName">Nom de Famille Principal :</label>
+                    <input type="text" id="familyName" value="Dupont" placeholder="Ex: Famille Dubois" required>
+                </div>
+                <div class="input-group">
+                    <label for="generations">Nombre de Générations à Inclure (max 5) :</label>
+                    <select id="generations">
+                        <option value="2">2 générations (parents, enfants)</option>
+                        <option value="3" selected>3 générations (grands-parents, parents, enfants)</option>
+                        <option value="4">4 générations (arrière-grands-parents inclus)</option>
+                        <option value="5">5 générations (trisaïeux inclus)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="mainMember">Membre Central de l'Arbre :</label>
+                    <input type="text" id="mainMember" value="Marie Dupont" placeholder="Ex: Jean Martin" required>
+                </div>
+                <div class="input-group">
+                    <label for="style">Style Visuel Préféré :</label>
+                    <select id="style">
+                        <option value="vintage">Papier Vintage</option>
+                        <option value="modern">Moderne Épuré</option>
+                        <option value="artistic">Aquarelle Artistique</option>
+                        <option value="minimalist">Minimaliste</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="notes">Notes Spécifiques ou Thèmes (optionnel) :</label>
+                    <textarea id="notes" placeholder="Ex: Accent sur l'héritage breton, ajouter des motifs de fleurs de lys."></textarea>
+                </div>
+                <button type="submit" id="tool-submit">Générer Mon Arbre Initiatique</button>
             </form>
 
             <div id="tool-result">
-                <h3 id="result-headline">Vos Suggestions Personnalisées :</h3>
-                <ul id="headline-list">
-                    <li>Remplissez le formulaire ci-dessus pour obtenir des idées de titres et descriptions uniques pour votre arbre généalogique.</li>
-                </ul>
+                <h3 id="result-headline">Votre Ébauche d'Arbre Généalogique :</h3>
+                <p>Les suggestions pour votre arbre apparaîtront ici. Personnalisez ensuite avec les outils dédiés.</p>
             </div>
         </section>
 
-        <section class="additional-info">
-            <h3>Pourquoi choisir notre générateur ?</h3>
-            <p>Notre approche "Editorial Ledger" transforme chaque arbre en une page d'histoire, avec une composition soignée et des finitions précises. Le design "Paper Vintage" n'est pas qu'un style, c'est une invitation à se connecter avec le passé.</p>
-            <ul>
-                <li>Interface glisser-déposer (conceptuel pour cette étape)</li>
-                <li>Choix de polices et de motifs "héritage"</li>
-                <li>Intégration facile de photos et de notes manuscrites</li>
-                <li>Option d'exportation en haute résolution pour impression</li>
-            </ul>
-            <a href="#" class="cta-button" data-affiliate-slot="premium-upgrade">Voir les Fonctionnalités Premium</a>
+        <section class="section features-grid-section">
+            <h2>Pourquoi Créer Votre Arbre ici ?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Design Personnalisable</h3>
+                    <p>Choisissez parmi une multitude de thèmes, du "Papier Vintage" classique à l'élégance moderne, pour un rendu unique.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Facile à Utiliser</h3>
+                    <p>Notre interface intuitive vous permet de construire votre arbre en quelques clics, sans aucune compétence technique.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Documentation Riche</h3>
+                    <p>Ajoutez photos, dates importantes, anecdotes et lieux pour donner vie à chaque membre de votre lignée.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Partage et Cadeaux</h3>
+                    <p>Idéal pour imprimer un cadeau unique pour un membre de la famille ou partager votre histoire sur les réseaux.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Idées pour Votre Arbre Généalogique</h2>
+            <p style="text-align: center; color: var(--light-text); margin-bottom: 30px;">Inspirez-vous de ces suggestions pour enrichir la présentation de votre histoire familiale.</p>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                <div class="feature-card" style="flex: 1 1 45%;">
+                    <h3>Thème "Racines Profondes"</h3>
+                    <p>Un style terreux avec des couleurs automnales, des motifs d'arbres stylisés et des encadrements boisés pour chaque personne.</p>
+                </div>
+                <div class="feature-card" style="flex: 1 1 45%;">
+                    <h3>Thème "Étoiles Familiales"</h3>
+                    <p>Un design aérien avec des teintes pastel, des liens subtils et des photos mises en valeur comme des constellations.</p>
+                </div>
+                <div class="feature-card" style="flex: 1 1 45%;">
+                    <h3>Thème "Voyage dans le Temps"</h3>
+                    <p>Incorpore des éléments de cartographie ancienne, des timbres et des polices d'époque pour un rendu historique.</p>
+                </div>
+                <div class="feature-card" style="flex: 1 1 45%;">
+                    <h3>Thème "Minimaliste Moderne"</h3>
+                    <p>Lignes épurées, typographie élégante, et palette de couleurs neutres pour une présentation sophistiquée et intemporelle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <h2>Ce que nos utilisateurs en disent</h2>
+                <div class="testimonial-card">
+                    <p>"J'ai toujours voulu créer un arbre généalogique, mais je trouvais ça compliqué. Cet outil est magique ! J'ai pu créer un magnifique cadeau pour l'anniversaire de ma grand-mère en un rien de temps."</p>
+                    <cite>Amélie R., Marseille</cite>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Le choix des styles est incroyable. J'ai adoré le thème 'Papier Vintage', il donne vraiment un aspect hérité et précieux à mon histoire familiale."</p>
+                    <cite>Étienne L., Lyon</cite>
+                </div>
+            </div>
         </section>
     </main>
 
-    <div class="seo-section">
-        <h2>Découvrez l'Histoire de Votre Famille avec Élégance</h2>
-        <p>Vous cherchez un moyen unique de <a href="#">créer votre arbre généalogique</a> ? Notre outil en ligne vous offre une expérience immersive pour retracer et visualiser votre lignée familiale. Que vous soyez un passionné de <a href="#">généalogie</a>, un <a href="#">historiens amateur</a>, ou que vous souhaitiez offrir un <a href="#">cadeau personnalisé</a>, notre générateur est la solution idéale.</p>
-        <p>Explorez différents <a href="#">styles d'arbres généalogiques</a>, du classique "Paper Vintage" au design moderne, et ajoutez des <a href="#">photos de famille</a>, des <a href="#">dates clés</a> et des <a href="#">anecdotes</a> pour enrichir chaque branche. Notre interface intuitive vous permet de concevoir facilement un <a href="#">arbre généalogique imprimable</a>, un <a href="#">tableau généalogique décoratif</a> ou même un <a href="#">poster d'histoire familiale</a>.</p>
-        <p>Ne laissez pas vos racines tomber dans l'oubli. Utilisez notre <a href="#">logiciel d'arbre généalogique gratuit en ligne</a> pour commencer votre projet dès aujourd'hui et conserver précieusement le <a href="#">patrimoine familial</a>. Idéal pour la <a href="#">documentation familiale</a>, les <a href="#">recherches généalogiques</a> ou simplement pour le plaisir de partager votre histoire.</p>
-        <p>Mots-clés : arbre généalogique en ligne, créer un arbre familial, généalogie gratuite, logiciel généalogie, modèle arbre généalogique, idée cadeau généalogique, histoire de famille, lignée familiale, recherche d'ancêtres, ascendance, arbre de vie.</p>
-    </div>
+    <section class="seo-section">
+        <div class="container">
+            <h3>Explorez Votre Histoire : Généalogie et Arbre Familial Personnalisé</h3>
+            <p>Découvrez notre plateforme pour créer votre <strong>arbre généalogique en ligne gratuitement</strong> et de manière esthétique. Que vous soyez un passionné d'<strong>histoire familiale</strong>, un <strong>généalogiste débutant</strong> ou à la recherche d'une <strong>idée de cadeau personnalisé</strong>, notre <strong>générateur d'arbre généalogique visuel</strong> est l'outil qu'il vous faut. Facile à utiliser, il vous permet de <strong>reconstituer votre lignée</strong>, d'ajouter des <strong>ancêtres</strong>, des <strong>photos de famille</strong>, et des anecdotes pour chaque membre. Explorez les différentes options de design, du style "Papier Vintage" pour un rendu authentique et hérité, aux designs modernes et épurés. Imprimez votre <strong>arbre familial</strong> pour le garder précieusement ou l'offrir. Commencez dès aujourd'hui à <strong>explorer vos racines</strong> et à <strong>créer une œuvre d'art familiale</strong> unique et significative. Retrouvez des informations sur vos <strong>origines</strong>, vos <strong>ancêtres communs</strong>, et construisez une <strong>filiation</strong> claire et belle. C'est l'outil parfait pour la <strong>documentation familiale</strong> et la transmission de votre <strong>patrimoine génétique et culturel</strong>.</p>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2023 Générateur d'Arbres Généalogiques Visuels. Tous droits réservés.</p>
+        <p>&copy; 2024 Générateur d'Arbres Généalogiques Visuels. Tous droits réservés.</p>
     </footer>
 
     <script>
         document.getElementById('tool-form').addEventListener('submit', function(event) {
             event.preventDefault();
 
-            const familyName = document.getElementById('family-name').value;
+            const familyName = document.getElementById('familyName').value;
             const generations = parseInt(document.getElementById('generations').value);
-            const themePreference = document.getElementById('theme-preference').value;
-            const keyEvent = document.getElementById('key-event').value;
+            const mainMember = document.getElementById('mainMember').value;
+            const style = document.getElementById('style').value;
+            const notes = document.getElementById('notes').value;
+            const resultDiv = document.getElementById('tool-result');
 
-            const headlineList = document.getElementById('headline-list');
-            headlineList.innerHTML = ''; // Clear previous results
+            let generatedContent = `<h3>Votre Arbre Généalogique - Ébauche '${familyName}'</h3>`;
+            generatedContent += `<p><strong>Style choisi :</strong> ${getStyleName(style)}</p>`;
+            generatedContent += `<p><strong>Membre central :</strong> ${mainMember}</p>`;
+            generatedContent += `<p><strong>Générations :</strong> ${generations}</p>`;
 
-            const themes = {
-                vintage: "Paper Vintage",
-                minimalist: "Minimaliste",
-                floral: "Floral",
-                artdeco: "Art Déco"
-            };
+            generatedContent += `<div class="result-group"><h4>Structure suggérée :</h4>`;
+            generatedContent += `<div class="result-item"><strong>Niveau 1 (Membre Central) :</strong> ${mainMember}</div>`;
 
-            const selectedTheme = themes[themePreference] || "Élégant";
+            if (generations >= 2) {
+                generatedContent += `<div class="result-item"><strong>Niveau 2 (Parents) :</strong> Père de ${mainMember}, Mère de ${mainMember}</div>`;
+            }
+            if (generations >= 3) {
+                generatedContent += `<div class="result-item"><strong>Niveau 3 (Grands-parents) :</strong> Parents du père, Parents de la mère</div>`;
+            }
+            if (generations >= 4) {
+                generatedContent += `<div class="result-item"><strong>Niveau 4 (Arrière-grands-parents) :</strong> 8 individus</div>`;
+            }
+            if (generations >= 5) {
+                generatedContent += `<div class="result-item"><strong>Niveau 5 (Trisaïeux) :</strong> 16 individus</div>`;
+            }
+            generatedContent += `</div>`;
 
-            const generationText = generations > 1 ? `sur ${generations} générations` : `sur 1 génération`;
-            const eventText = keyEvent ? ` avec une touche spéciale : "${keyEvent}".` : '.';
+            generatedContent += `<div class="result-group"><h4>Idées de personnalisation (${getStyleName(style)}) :</h4>`;
+            generatedContent += `<div class="result-item"><strong>Couleurs :</strong> ${getColorPalette(style)}</div>`;
+            generatedContent += `<div class="result-item"><strong>Typographie :</strong> ${getTypography(style)}</div>`;
+            generatedContent += `<div class="result-item"><strong>Motifs/Ornements :</strong> ${getOrnaments(style)}</div>`;
+            if (notes) {
+                generatedContent += `<div class="result-item"><strong>Vos notes intégrées :</strong> "${notes}"</div>`;
+            }
+            generatedContent += `</div>`;
+            
+            generatedContent += `<p style="margin-top:20px;">Utilisez ces bases pour affiner votre design et ajouter les noms, dates et photos sur l'outil de personnalisation détaillé !</p>`;
 
-            const suggestions = [
-                // SEO-friendly
-                `Découvrez l'histoire de la famille ${familyName} : un arbre généalogique ${generationText}.`,
-                `Générez votre arbre ${selectedTheme} pour la lignée ${familyName} ${generationText}${eventText}`,
-                `Documentation Familiale : Arbre Généalogique ${familyName} ${generationText}, style ${selectedTheme}.`,
-                // Clickbait
-                `L'incroyable histoire de la famille ${familyName} révélée ! Votre arbre ${generationText} à portée de clic.`,
-                `Ne devinez plus ! Créez votre arbre ${familyName} ${generationText} avec ce style unique ${selectedTheme}.`,
-                `Choquant ! Ce que vous ne saviez pas sur vos ancêtres ${familyName} ${generationText}.`,
-                // Expert/Detailed
-                `Analyse généalogique visuelle : l'ascendance des ${familyName} illustrée ${generationText} en ${selectedTheme}.`,
-                `Cartographie généalogique interactive des ${familyName} : ${generationText} et au-delà.`,
-                `Représentation graphique personnalisée du lignage ${familyName}, édition ${selectedTheme}, ${generationText}${eventText}`,
-                // Soft/Emotional
-                `Célébrez vos racines : l'arbre de la famille ${familyName} ${generationText}, un héritage visuel.`,
-                `Connectez-vous à votre passé : l'arbre généalogique des ${familyName} en style ${selectedTheme}.`,
-                `Un héritage précieux : revivez l'histoire des ${familyName} ${generationText} à travers cet arbre unique.`,
-                // Commercial/Call to Action
-                `Créez l'arbre généalogique ${familyName} ${generationText} maintenant ! Style ${selectedTheme} inclus.`,
-                `Obtenez votre arbre familial ${familyName} ${generationText} personnalisé : un design ${selectedTheme} vous attend.`,
-                `Transformez l'histoire des ${familyName} ${generationText} en œuvre d'art avec notre générateur ${selectedTheme}.`
-            ];
-
-            suggestions.forEach(suggestion => {
-                const li = document.createElement('li');
-                li.textContent = suggestion;
-                headlineList.appendChild(li);
-            });
+            resultDiv.innerHTML = generatedContent;
         });
+
+        function getStyleName(styleKey) {
+            switch(styleKey) {
+                case 'vintage': return 'Papier Vintage';
+                case 'modern': return 'Moderne Épuré';
+                case 'artistic': return 'Aquarelle Artistique';
+                case 'minimalist': return 'Minimaliste';
+                default: return 'Général';
+            }
+        }
+
+        function getColorPalette(styleKey) {
+            switch(styleKey) {
+                case 'vintage': return 'Sépia, beige, brun, crème avec accents dorés.';
+                case 'modern': return 'Gris, blanc, noir, bleu-gris doux.';
+                case 'artistic': return 'Teintes pastel, lavande, vert d\'eau, rose poudré.';
+                case 'minimalist': return 'Blanc pur, gris clair, noir pour le texte, une touche de couleur neutre.';
+                default: return 'Palette neutre et douce.';
+            }
+        }
+
+        function getTypography(styleKey) {
+            switch(styleKey) {
+                case 'vintage': return 'Typographie script élégante pour les titres, serif classique pour le corps de texte.';
+                case 'modern': return 'Polices sans-serif géométriques, claires et lisibles.';
+                case 'artistic': return 'Polices manuscrites stylisées pour les noms, sans-serif fin pour les détails.';
+                case 'minimalist': return 'Une seule famille de police sans-serif légère et espacée.';
+                default: return 'Mélange harmonieux de serif et sans-serif.';
+            }
+        }
+
+        function getOrnaments(styleKey) {
+            switch(styleKey) {
+                case 'vintage': return 'Bordures anciennes, motifs floraux discrets, filigranes, textures de papier jauni.';
+                case 'modern': return 'Lignes épurées, icônes géométriques, espace négatif.';
+                case 'artistic': return 'Taches d\'aquarelle, illustrations végétales stylisées, bordures irrégulières.';
+                case 'minimalist': return 'Absence d\'ornements, focalisation sur la clarté et la structure.';
+                default: return 'Petits symboles ou icônes discrets.';
+            }
+        }
     </script>
 <div id="qa-smoke-result" hidden></div>
 <script id="farmbuilder-affiliate-helper">
