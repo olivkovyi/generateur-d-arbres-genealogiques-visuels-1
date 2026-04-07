@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur d&#x27;Arbres Généalogiques Visuels | Créez Votre Récit Familial Unique</title>
+    <meta name="description" content="Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...">
+    <style>
+        :root {
+            --color-primary: #5a4b41;
+            --color-secondary: #a69a8b;
+            --color-background: #f7f3ed;
+            --color-text: #333;
+            --color-border: #d0c8bd;
+            --font-family-body: 'Georgia', serif;
+            --font-family-heading: 'Helvetica Neue', Arial, sans-serif;
+            --spacing-unit: 1.5rem;
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            color: var(--color-text);
+            background-color: var(--color-background);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: #fff;
+            width: 100%;
+            padding: var(--spacing-unit) 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: var(--font-family-heading);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        main {
+            width: 100%;
+            max-width: 1000px;
+            padding: var(--spacing-unit);
+            box-sizing: border-box;
+            display: grid;
+            gap: var(--spacing-unit);
+            grid-template-columns: 1fr;
+        }
+
+        section {
+            background-color: #fff;
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-unit);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-family: var(--font-family-heading);
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 0.5rem;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-family: var(--font-family-heading);
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #7d6b5e;
+        }
+
+        #presentation, #how-it-works, #tool-section {
+            grid-column: 1 / -1;
+        }
+
+        #tool-form {
+            display: grid;
+            gap: 1rem;
+            margin-top: var(--spacing-unit);
+        }
+
+        #tool-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        #tool-form input[type="text"],
+        #tool-form textarea,
+        #tool-form select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid var(--color-border);
+            background-color: #fcfafa;
+            font-family: var(--font-family-body);
+            font-size: 1rem;
+        }
+
+        #tool-form textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        #tool-submit {
+            width: auto;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+
+        #tool-result {
+            margin-top: var(--spacing-unit);
+            border-top: 1px dashed var(--color-border);
+            padding-top: var(--spacing-unit);
+        }
+
+        #tool-result h3 {
+            font-family: var(--font-family-heading);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #tool-result ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #tool-result li {
+            background-color: #f0ede9;
+            border: 1px solid var(--color-secondary);
+            padding: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-family-body);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        #tool-result li::before {
+            content: '📜';
+            position: absolute;
+            left: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .spotlight-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #fefefe;
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-unit);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .spotlight-card h3 {
+            font-family: var(--font-family-heading);
+            color: var(--color-primary);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .spotlight-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: var(--spacing-unit);
+            border: 1px solid var(--color-border);
+        }
+
+        .additional-info {
+            background-color: #f0ede9;
+            padding: var(--spacing-unit);
+            border: 1px solid var(--color-secondary);
+            margin-top: var(--spacing-unit);
+        }
+
+        .additional-info h3 {
+            color: var(--color-primary);
+            font-family: var(--font-family-heading);
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        footer {
+            background-color: var(--color-primary);
+            color: #fff;
+            width: 100%;
+            padding: var(--spacing-unit) 0;
+            text-align: center;
+            margin-top: var(--spacing-unit);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .seo-section {
+            background-color: var(--color-secondary);
+            color: #fff;
+            padding: var(--spacing-unit);
+            margin-top: var(--spacing-unit);
+            text-align: left;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            max-width: 1000px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .seo-section h2 {
+            color: #fff;
+            border-bottom-color: rgba(255,255,255,0.3);
+        }
+
+        .seo-section a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+            }
+            #presentation {
+                grid-column: 1 / 2;
+            }
+            #how-it-works {
+                grid-column: 2 / 3;
+            }
+            #tool-section {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app">
+    <meta property="og:title" content="Générateur d&#x27;Arbres Généalogiques Visuels">
+    <meta property="og:description" content="Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...">
+    <meta property="og:url" content="https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Générateur d'Arbres Généalogiques Visuels", "description": "Créez des représentations graphiques personnalisées de votre arbre généalogique. Choisissez parmi différents styles, ajoutez des photos et des notes. Parfait pour la documentation familiale...", "url": "https://generateur-d-arbres-genealogiques-visuels-1.up.railway.app", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="generateur-d-arbres-genealogiques-visuels-1" data-runtime-mode="document_generator">
+    <header>
+        <h1>Générateur d'Arbres Généalogiques Visuels</h1>
+        <p>Donnez vie à votre héritage familial avec élégance.</p>
+    </header>
+
+    <main>
+        <section id="presentation" class="spotlight-card">
+            <h2>Créez Votre Récit Familial Unique</h2>
+            <img src="https://via.placeholder.com/400x250?text=Arbre+Généalogique+Personnalisé" alt="Exemple d'arbre généalogique personnalisé">
+            <p>Notre outil intuitif vous permet de transformer des données brutes en magnifiques arbres généalogiques visuels. Oubliez les logiciels complexes et les designs génériques. Ici, chaque arbre est une œuvre d'art, reflétant le caractère unique de votre lignée.</p>
+            <p>Idéal pour un cadeau inoubliable, une exposition familiale ou simplement pour documenter votre histoire personnelle avec une touche d'élégance "Paper Vintage".</p>
+        </section>
+
+        <section id="how-it-works" class="spotlight-card">
+            <h2>Comment Ça Marche ?</h2>
+            <h3>1. Saisie Simplifiée</h3>
+            <p>Entrez les noms, dates et liens de parenté de votre famille. Pas besoin d'être un expert en généalogie, notre interface guide vos pas.</p>
+            <h3>2. Personnalisation Avancée</h3>
+            <p>Choisissez parmi une galerie de styles graphiques inspirés du thème "Paper Vintage". Ajoutez des photos de famille, des anecdotes personnelles et même des couleurs pour chaque branche.</p>
+            <h3>3. Visualisation Instantanée</h3>
+            <p>Obtenez un aperçu direct de votre arbre. Ajustez et peaufinez jusqu'à ce que le résultat soit parfait, prêt à être sauvegardé ou imprimé.</p>
+            <a href="#tool-section" class="cta-button">Commencer mon Arbre</a>
+        </section>
+
+        <section id="tool-section">
+            <h2>Votre Atelier Généalogique</h2>
+            <p>Remplissez les informations ci-dessous pour générer des idées de titres et de descriptions pour votre arbre généalogique. Ces suggestions vous aideront à mieux présenter votre création.</p>
+            <form id="tool-form">
+                <label for="family-name">Nom de Famille Principal (ex: Dupont) :</label>
+                <input type="text" id="family-name" name="family-name" placeholder="Ex: Les Durant" required>
+
+                <label for="generations">Nombre de Générations (ex: 3, 4, 5) :</label>
+                <input type="text" id="generations" name="generations" placeholder="Ex: 4" required>
+
+                <label for="theme-preference">Préférence de Thème Visuel :</label>
+                <select id="theme-preference" name="theme-preference">
+                    <option value="vintage">Paper Vintage Classique</option>
+                    <option value="minimalist">Minimaliste Moderne</option>
+                    <option value="floral">Éclat Floral</option>
+                    <option value="artdeco">Art Déco Élégant</option>
+                </select>
+
+                <label for="key-event">Un Événement Clé ou une Particularité (Optionnel) :</label>
+                <textarea id="key-event" name="key-event" placeholder="Ex: Origines en Bretagne, Histoire de Résistance, etc."></textarea>
+
+                <button type="submit" id="tool-submit" class="cta-button">Générer les Idées</button>
+            </form>
+
+            <div id="tool-result">
+                <h3 id="result-headline">Vos Suggestions Personnalisées :</h3>
+                <ul id="headline-list">
+                    <li>Remplissez le formulaire ci-dessus pour obtenir des idées de titres et descriptions uniques pour votre arbre généalogique.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="additional-info">
+            <h3>Pourquoi choisir notre générateur ?</h3>
+            <p>Notre approche "Editorial Ledger" transforme chaque arbre en une page d'histoire, avec une composition soignée et des finitions précises. Le design "Paper Vintage" n'est pas qu'un style, c'est une invitation à se connecter avec le passé.</p>
+            <ul>
+                <li>Interface glisser-déposer (conceptuel pour cette étape)</li>
+                <li>Choix de polices et de motifs "héritage"</li>
+                <li>Intégration facile de photos et de notes manuscrites</li>
+                <li>Option d'exportation en haute résolution pour impression</li>
+            </ul>
+            <a href="#" class="cta-button" data-affiliate-slot="premium-upgrade">Voir les Fonctionnalités Premium</a>
+        </section>
+    </main>
+
+    <div class="seo-section">
+        <h2>Découvrez l'Histoire de Votre Famille avec Élégance</h2>
+        <p>Vous cherchez un moyen unique de <a href="#">créer votre arbre généalogique</a> ? Notre outil en ligne vous offre une expérience immersive pour retracer et visualiser votre lignée familiale. Que vous soyez un passionné de <a href="#">généalogie</a>, un <a href="#">historiens amateur</a>, ou que vous souhaitiez offrir un <a href="#">cadeau personnalisé</a>, notre générateur est la solution idéale.</p>
+        <p>Explorez différents <a href="#">styles d'arbres généalogiques</a>, du classique "Paper Vintage" au design moderne, et ajoutez des <a href="#">photos de famille</a>, des <a href="#">dates clés</a> et des <a href="#">anecdotes</a> pour enrichir chaque branche. Notre interface intuitive vous permet de concevoir facilement un <a href="#">arbre généalogique imprimable</a>, un <a href="#">tableau généalogique décoratif</a> ou même un <a href="#">poster d'histoire familiale</a>.</p>
+        <p>Ne laissez pas vos racines tomber dans l'oubli. Utilisez notre <a href="#">logiciel d'arbre généalogique gratuit en ligne</a> pour commencer votre projet dès aujourd'hui et conserver précieusement le <a href="#">patrimoine familial</a>. Idéal pour la <a href="#">documentation familiale</a>, les <a href="#">recherches généalogiques</a> ou simplement pour le plaisir de partager votre histoire.</p>
+        <p>Mots-clés : arbre généalogique en ligne, créer un arbre familial, généalogie gratuite, logiciel généalogie, modèle arbre généalogique, idée cadeau généalogique, histoire de famille, lignée familiale, recherche d'ancêtres, ascendance, arbre de vie.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Générateur d'Arbres Généalogiques Visuels. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const familyName = document.getElementById('family-name').value;
+            const generations = parseInt(document.getElementById('generations').value);
+            const themePreference = document.getElementById('theme-preference').value;
+            const keyEvent = document.getElementById('key-event').value;
+
+            const headlineList = document.getElementById('headline-list');
+            headlineList.innerHTML = ''; // Clear previous results
+
+            const themes = {
+                vintage: "Paper Vintage",
+                minimalist: "Minimaliste",
+                floral: "Floral",
+                artdeco: "Art Déco"
+            };
+
+            const selectedTheme = themes[themePreference] || "Élégant";
+
+            const generationText = generations > 1 ? `sur ${generations} générations` : `sur 1 génération`;
+            const eventText = keyEvent ? ` avec une touche spéciale : "${keyEvent}".` : '.';
+
+            const suggestions = [
+                // SEO-friendly
+                `Découvrez l'histoire de la famille ${familyName} : un arbre généalogique ${generationText}.`,
+                `Générez votre arbre ${selectedTheme} pour la lignée ${familyName} ${generationText}${eventText}`,
+                `Documentation Familiale : Arbre Généalogique ${familyName} ${generationText}, style ${selectedTheme}.`,
+                // Clickbait
+                `L'incroyable histoire de la famille ${familyName} révélée ! Votre arbre ${generationText} à portée de clic.`,
+                `Ne devinez plus ! Créez votre arbre ${familyName} ${generationText} avec ce style unique ${selectedTheme}.`,
+                `Choquant ! Ce que vous ne saviez pas sur vos ancêtres ${familyName} ${generationText}.`,
+                // Expert/Detailed
+                `Analyse généalogique visuelle : l'ascendance des ${familyName} illustrée ${generationText} en ${selectedTheme}.`,
+                `Cartographie généalogique interactive des ${familyName} : ${generationText} et au-delà.`,
+                `Représentation graphique personnalisée du lignage ${familyName}, édition ${selectedTheme}, ${generationText}${eventText}`,
+                // Soft/Emotional
+                `Célébrez vos racines : l'arbre de la famille ${familyName} ${generationText}, un héritage visuel.`,
+                `Connectez-vous à votre passé : l'arbre généalogique des ${familyName} en style ${selectedTheme}.`,
+                `Un héritage précieux : revivez l'histoire des ${familyName} ${generationText} à travers cet arbre unique.`,
+                // Commercial/Call to Action
+                `Créez l'arbre généalogique ${familyName} ${generationText} maintenant ! Style ${selectedTheme} inclus.`,
+                `Obtenez votre arbre familial ${familyName} ${generationText} personnalisé : un design ${selectedTheme} vous attend.`,
+                `Transformez l'histoire des ${familyName} ${generationText} en œuvre d'art avec notre générateur ${selectedTheme}.`
+            ];
+
+            suggestions.forEach(suggestion => {
+                const li = document.createElement('li');
+                li.textContent = suggestion;
+                headlineList.appendChild(li);
+            });
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.setAttribute("rel", "nofollow sponsored noopener noreferrer");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank", "noopener");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (tag === "select") {
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      field.value = sampleNumber(field);
+      return;
+    }
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    form.querySelectorAll("input, select, textarea").forEach(applySample);
+    const blocker = function (event) {
+      event.preventDefault();
+    };
+    form.addEventListener("submit", blocker, { capture: true, once: true });
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    inspectResult(before, 6);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
